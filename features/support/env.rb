@@ -6,15 +6,28 @@ require 'capybara'
 require 'capybara/cucumber'
 require 'rspec'
 require 'pry'
+require 'database_cleaner'
+require 'database_cleaner/cucumber'
 
 Capybara.app = SlowFood
 
+
+
 class SlowFoodWorld
-  include Capybara::DSL
-  include RSpec::Expectations
-  include RSpec::Matchers
+ include Capybara::DSL
+ include RSpec::Expectations
+ include RSpec::Matchers
 end
 
-World do
-  SlowFoodWorld.new
+DatabaseCleaner.strategy = :truncation
+
+Around do |_scenario, block|
+ DatabaseCleaner.cleaning(&block)
 end
+
+Warden.test_mode!
+World do
+ SlowFoodWorld.new
+ Warden::Test::Helpers
+end
+After { Warden.test_reset! }
