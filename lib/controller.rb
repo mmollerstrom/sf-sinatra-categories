@@ -88,4 +88,10 @@ class SlowFood < Sinatra::Base
 
     erb :protected
   end
+
+  get '/menu' do
+    @menu = Menu.first
+    erb :menu
+  end
+
 end
