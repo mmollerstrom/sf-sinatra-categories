@@ -1,8 +1,9 @@
-class Menu
+class Dish
+
   include DataMapper::Resource
   property :id, Serial, key: true
   property :name, String, length: 128
 
-has n, :dish
+  belongs_to :menu
 
 end
