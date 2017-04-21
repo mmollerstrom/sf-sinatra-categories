@@ -1,6 +1,9 @@
-Given(/^there is a dish called "([^"]*)" on "([^"]*)"$/) do |dish_name, menu_name|
-  Dish.create(name: dish_name)
-  Menu.create(name: menu_name)
+
+Given(/^there is a dish called "([^"]*)" on "([^"]*)"$/) do |dishName, menuName|
+  #binding.pry
+  menu = Menu.create(name: menuName)
+  menu.dishes.create(name: dishName, menu_id: menu.id)
+  menu.save
 end
 
 Given(/^I visit the Menu page$/) do

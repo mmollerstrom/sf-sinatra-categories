@@ -3,9 +3,9 @@ I need to see information about the dishes.
 -Menu should have dishes
 
 Background:
-  Given there is a menu called "Menu"
-  And there is a dish called "Pizza" on "Menu"
-  And there is a dish called "Pasta Carbonara" on "Menu"
+  Given there is a menu called "Lunch"
+  And there is a dish called "Pizza" on "Lunch"
+  And there is a dish called "Pasta Carbonara" on "Lunch"
 
 Scenario: Visitor should see available dishes and price
   Given I visit the Menu page
