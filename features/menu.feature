@@ -4,7 +4,7 @@ Feature: As a visitor
 
 Background:
   Given there is a menu called "Lunch"
-  
+
 Scenario: Visitor should view the menu page
   Given I visit the menu page
   Then I should see "Lunch"

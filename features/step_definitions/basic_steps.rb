@@ -1,3 +1,7 @@
+Given(/^I visit the page "([^"]*)"$/) do |page|
+  visit page
+end
+
 Given(/^I visit the menu page$/) do
   visit '/menu'
 end
@@ -16,4 +20,16 @@ end
 
 Then(/^I should be on the menu page$/) do
   expect(current_path).to eq '/menu'
+end
+
+Given(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, text|
+  fill_in(field, with: text)
+end
+
+Given(/^I click on the "([^"]*)" button$/) do |element|
+  click_button(element)
+end
+
+Then(/^show me the page$/) do
+  save_and_open_page
 end
