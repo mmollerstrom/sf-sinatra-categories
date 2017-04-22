@@ -1,8 +1,8 @@
 <%= @menu.name %> <br>
-<% @category.category_name.each do |cat_name| %>
+<% @category.each do |cat| %>
   <ul>
-    <%= cat_name %>
-    <% cat_name.dishes.each do |dish| %> <br>
+    <%= cat.category_name %>
+    <% cat.dishes.each do |dish| %> <br>
       <li>
         <%= dish[:name] %>
       </li>

@@ -87,6 +87,7 @@ class SlowFood < Sinatra::Base
     #binding.pry
     @menu = Menu.first
     @category = Category.all
+    #binding.pry
     erb :menu
   end
 

@@ -1,11 +1,14 @@
-Given(/^there is a dish called "([^"]*)" on "([^"]*)"$/) do |dish_name, menu_name|
-  menu = Menu.first(name: menu_name)
-  menu.dishes.create(name: dish_name, menu_id: menu.id)
-end
+# Given(/^there is a dish called "([^"]*)" on "([^"]*)"$/) do |dish_name, menu_name|
+#   menu = Menu.first(name: menu_name)
+#   menu.dishes.create(name: dish_name, menu_id: menu.id)
+# end
 
-Given(/^there is a dish called "([^"]*)" on category "([^"]*)"$/) do |dish_name, cat_name|
+Given(/^there is a dish called "([^"]*)" on category "([^"]*)" on menu "([^"]*)"$/) do |dish_name, cat_name, menu_name|
+  #binding.pry
+  menu = Menu.first(name: menu_name)
   category = Category.first(category_name: cat_name)
-  category.dishes.create(name: dish_name, category_id: category.id)
+  category.dishes.create(name: dish_name, category_id: category.id, menu_id: menu.id)
+  #binding.pry
 end
 
 Given(/^I visit the Menu page$/) do
@@ -13,6 +16,7 @@ Given(/^I visit the Menu page$/) do
 end
 
 Given(/^there is a category called "([^"]*)"$/) do |content|
+  #binding.pry
   Category.create(category_name: content)
 end
 
