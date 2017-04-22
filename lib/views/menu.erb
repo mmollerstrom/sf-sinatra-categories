@@ -1,1 +1,11 @@
-<%= @menu.name %>
+<%= @menu.name %> <br>
+<% @category.category_name.each do |cat_name| %>
+  <ul>
+    <%= cat_name %>
+    <% cat_name.dishes.each do |dish| %> <br>
+      <li>
+        <%= dish[:name] %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

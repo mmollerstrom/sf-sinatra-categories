@@ -11,6 +11,7 @@ gem 'data_mapper'
 gem 'pg'
 gem 'dm-postgres-adapter'
 gem 'pry'
+gem 'pry-byebug'
 
 group :development, :test do
   gem 'dotenv'

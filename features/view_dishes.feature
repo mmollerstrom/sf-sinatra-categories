@@ -10,5 +10,4 @@ Background:
 Scenario: Visitor should see available dishes and price
   Given I visit the Menu page
   Then I should be able to see "Pizza"
-  And I should be able to see "Carbonara"
-  Then show me the page
+  And I should be able to see "Pasta Carbonara"
