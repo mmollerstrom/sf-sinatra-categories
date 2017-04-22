@@ -7,5 +7,6 @@ class Dish
   property :menu_id, Serial, key: true
 
   belongs_to :menu,  key: true
+  belongs_to :category, key: true
 
 end
